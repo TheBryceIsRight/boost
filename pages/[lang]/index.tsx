@@ -15,6 +15,9 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import ThemeContext from '../../components/Theme';
 import { Button } from '@material-ui/core';
+import ComboBox from '../../components/ComboBox';
+import SearchList from "../../components/SearchList";
+import Box from "@material-ui/core/Box";
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 {/*
@@ -38,155 +41,11 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-function Hero() {
-  const theme = useContext(ThemeContext);
-  const { t } = useTranslation();
-  const heroImage = theme ? '/Main.png' : '/Main_Dark.png' ;
-  const text_width_small = "200px";
-  const text_width = "300px";
-  const text_width_tablet = "400px";
-  const text_width_desktop = "500px";
-
-    return <React.Fragment>
-      <MediaContextProvider>
-          {/*Smaller than mobile */}
-          <Media at='sm'>
-      <div style={{position: 'absolute', top: 150, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-        
-        <img src={heroImage} alt='Elavon' width="100%"/>
-      </div>
-      <div style={{position: 'relative', top: 120, left: 30, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
-        <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width_small}}>{t("hero_title")} </Typography>
-        </Grid>
-        <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width_small}}>{t("hero_subtitle")}</Typography>
-        </Grid>
-        <Grid item>
-          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
-        </Grid>
-      </Grid>          
-      </div>
-      </Media>
-
-         {/*Mobile */}
-      <Media at='mo'>
-      <div style={{position: 'absolute', top: 150, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-        
-        <img src={heroImage} alt='Elavon' width="100%"/>
-      </div>
-      <div style={{position: 'relative', top: 200, left: 30, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-      <Grid container spacing={2} direction='column' alignItems='flex-start' justify='flex-start'  >
-        <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width}}>{t("hero_title")}</Typography>
-        </Grid>
-        <Grid item>
-        <Typography variant='subtitle1' style={{maxWidth:text_width}}>{t("hero_subtitle")}</Typography>
-        </Grid>
-        <Grid item>
-          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
-        </Grid>
-      </Grid> 
-      </div>
-              
-      </Media>
-
-      {/*Tablet */}
-      <Media at='md'>
-      <div style={{position: 'absolute', top: 150, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-        
-        <img src={heroImage} alt='Elavon' width="100%"/>
-      </div>
-      <div style={{position: 'relative', top: 100, left: 260, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
-        <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width_tablet}}>{t("hero_title")}</Typography>
-        </Grid>
-        <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width_tablet}}>{t("hero_subtitle")}</Typography>
-        </Grid>
-        <Grid item>
-          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
-        </Grid>
-      </Grid>          
-      </div>
-        
-      </Media>
-
-      {/*Desktop */}
-      <Media at='lg'>
-      <div style={{position: 'absolute', top: 120, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-        
-        <img src={heroImage} alt='Elavon' width="100%"/>
-      </div>
-      <div style={{position: 'relative', top: 80, left: 400, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
-        <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("hero_title")}</Typography>
-        </Grid>
-        <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>{t("hero_subtitle")}</Typography>
-        </Grid>
-        <Grid item>
-          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
-        </Grid>
-      </Grid>          
-      </div>
-        
-      </Media>
-
-      {/*High Resolution Desktop */}
-      <Media at='xl'>
-      <div style={{position: 'absolute', top: 120, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-        
-        <img src={heroImage} alt='Elavon' width="100%"/>
-      </div>
-      <div style={{position: 'relative', top: 80, left: 600, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
-        <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("hero_title")}</Typography>
-        </Grid>
-        <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>{t("hero_subtitle")}</Typography>
-        </Grid>
-        <Grid item>
-          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
-        </Grid>
-      </Grid>          
-      </div>
-      </Media>
-      
-      {/*4K & Greater*/}
-      <Media greaterThanOrEqual='el'>
-      <div style={{position: 'absolute', top: 120, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-        
-        <img src={heroImage} alt='Elavon' width="100%"/>
-      </div>
-      <div style={{position: 'relative', top: 130, left: 600, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
-      <Grid container spacing={2} direction='column' alignItems='flex-end' justify='flex-end' >
-        <Grid item>
-        <Typography variant='h3' style={{maxWidth:text_width_desktop}}>{t("hero_title")}</Typography>
-        </Grid>
-        <Grid item>
-        <Typography variant='subtitle1'  style={{maxWidth:text_width_desktop}}>{t("hero_subtitle")}</Typography>
-        </Grid>
-        <Grid item>
-          <Button variant='contained' size='large'>{t("try_talech_now")}</Button>
-        </Grid>
-      </Grid>          
-      </div>
-      </Media>
-      </MediaContextProvider>
-      
-    </React.Fragment>;
-  
-}
 
 function DIY() {
 
   const classes = useStyles();
-
+  const boxHeight = 30;
 
     return <React.Fragment>
       <Head>
@@ -198,165 +57,63 @@ function DIY() {
         
         {/*Mobile */}
         <Media lessThan='md'>
-        <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
-            <Grid item>
-            <Hero/>
-            </Grid>
-          </Grid>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <CheckboxesGroup/>
-          <br/>
-          <Grid container spacing={5} direction='row' alignItems='flex-start' justify='center' className={classes.root} >
-            <Grid item>
-            <StarterBundle/>
-            </Grid>
-            <Grid item>
-            <StandardBundle/>
-            </Grid>
-            <Grid item>
-            <PremiumBundle/>
-            </Grid>
-          </Grid>
+        <ComboBox/>
+        <br/>
+        <SearchList/>
         </Media>
 
         {/*Tablet */}
         <Media at='md'>
-        <Grid container spacing={5} direction='column' alignItems='flex-start' justify='center' className={classes.root} >
-            <Grid item>
-            <Hero/>
-            </Grid>
-          </Grid>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <CheckboxesGroup/>
-          <br/>
-          <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
-            <Grid item>
-            <StarterBundle/>
-            </Grid>
-            <Grid item>
-            <StandardBundle/>
-            </Grid>
-            <Grid item>
-            <PremiumBundle/>
-            </Grid>
-          </Grid>
+        <ComboBox/>
+        <br/>
+        <SearchList/>
         </Media>
 
         {/*Desktop */}
         <Media at='lg'>
-        <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
-            <Grid item>
-            <Hero/>
-            </Grid>
-          </Grid>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <CheckboxesGroup/>
-              <br/>
-          <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
-            <Grid item>
-            <StarterBundle/>
-            </Grid>
-            <Grid item>
-            <StandardBundle/>
-            </Grid>
-            <Grid item>
-            <PremiumBundle/>
-            </Grid>
-          </Grid>
+        <ComboBox/>
+        <br/>
+        <SearchList/>
         </Media>
 
         {/*High Resolution Desktop */}
         <Media at='xl'>
-        <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
-            <Grid item>
-            <Hero/>
-            </Grid>
-          </Grid>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <CheckboxesGroup/>
-          <br/>
-          <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
-            <Grid item>
-            <StarterBundle/>
-            </Grid>
-            <Grid item>
-            <StandardBundle/>
-            </Grid>
-            <Grid item>
-            <PremiumBundle/>
-            </Grid>
-          </Grid>
+        <ComboBox/>
+        <br/>
+        <SearchList/>
         </Media>
         
         {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>
-          <Grid container spacing={5} direction='column' alignItems='flex-start' justify='flex-start' className={classes.root} >
-            <Grid item>
-            <Hero/>
-            </Grid>
+        <Grid container spacing={3} direction="column">
+        <Grid item>
+            <Box style={{height:boxHeight}}></Box>
           </Grid>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <CheckboxesGroup/>
-          <br/>
-          <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' className={classes.root} >
-            <Grid item>
-            <StarterBundle/>
-            </Grid>
-            <Grid item>
-            <StandardBundle/>
-            </Grid>
-            <Grid item>
-            <PremiumBundle/>
-            </Grid>
+        <Grid item>
+            <Typography variant="h3">Search for a merchant</Typography>
           </Grid>
+          <Grid item>
+          <ComboBox/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h4">Recent searches</Typography>
+          </Grid>
+          <Grid item>
+          <SearchList/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h4">Saved searches</Typography>
+          </Grid>
+          <Grid item>
+          <SearchList/>
+          </Grid>
+        </Grid>
         </Media>
         </MediaContextProvider>
     </React.Fragment> 

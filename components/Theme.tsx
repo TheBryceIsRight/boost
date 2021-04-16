@@ -55,7 +55,7 @@ const light = createMuiTheme({
           main: '#025D25',
         },
         background: {
-          default: '#F6F7FC',
+          default: '#FFF',
           paper: '#EBEFF5',
         },
     },

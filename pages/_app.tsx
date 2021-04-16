@@ -274,7 +274,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       return (
       <Link href="/[lang]/" as={`/${locale}/`} passHref>
         <ButtonBase>
-        <img src='/Elavon_logo_white.svg' alt='Elavon' height="36"/>
+        <img src='/logo_dark.svg' alt='Logo' height="36"/>
         </ButtonBase>
       </Link>
       );
@@ -282,7 +282,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
       <Link href="/[lang]/" as={`/${locale}/`} passHref>
         <ButtonBase>
-        <img src='/Elavon_logo.svg' alt='Elavon' height="36"/>
+        <img src='/logo.svg' alt='Logo' height="36"/>
         </ButtonBase>
       </Link>
       );
