@@ -4,7 +4,6 @@ import { lightTheme, darkTheme } from '../components/Theme'
 import { ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MemoryRouter as Router } from 'react-router';
-import '../styles/mapbox-gl.css';
 import '../styles/global.css';
 import { Media, MediaContextProvider } from "../utils/media";
 
