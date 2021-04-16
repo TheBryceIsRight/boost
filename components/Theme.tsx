@@ -43,7 +43,7 @@ const light = createMuiTheme({
     palette: {
         type: 'light',
         primary: {
-          main: '#002E42',
+          main: '#004D60',
         },
         secondary: {
           main: '#6E6E6E',
@@ -55,8 +55,8 @@ const light = createMuiTheme({
           main: '#025D25',
         },
         background: {
-          default: '#FFF',
-          paper: '#EBEFF5',
+          default: '#F3FFFC',
+          paper: '#C9F7EC',
         },
     },
 });
