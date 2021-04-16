@@ -1,50 +1,36 @@
 
 import Head from 'next/head';
-import React, {useContext} from 'react';
+import React from 'react';
 import {
   Typography,
 } from '@material-ui/core';
-import CheckboxesGroup from '../../components/CheckboxesGroup';
 import { Media, MediaContextProvider } from "../../utils/media";
 import withLocale from '../../hocs/withLocale';
-import StarterBundle from '../../components/StarterBundle';
-import StandardBundle from '../../components/StandardBundle';
-import useTranslation from '../../hooks/useTranslation';
-import PremiumBundle from '../../components/PremiumBundle';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import ThemeContext from '../../components/Theme';
-import { Button } from '@material-ui/core';
+// import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import ComboBox from '../../components/ComboBox';
 import SearchList from "../../components/SearchList";
 import Box from "@material-ui/core/Box";
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-{/*
-interface IIndexProps {
-  products: IProduct[]
-} 
-*/}
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      height: 100,
-      width: 100,
-    },
-    control: {
-      padding: theme.spacing(2),
-    },
-  }),
-);
+// const useStyles = makeStyles((theme: Theme) =>
+//   createStyles({
+//     root: {
+//       flexGrow: 1,
+//     },
+//     paper: {
+//       height: 100,
+//       width: 100,
+//     },
+//     control: {
+//       padding: theme.spacing(2),
+//     },
+//   }),
+// );
 
 
 function DIY() {
 
-  const classes = useStyles();
   const boxHeight = 30;
 
     return <React.Fragment>
