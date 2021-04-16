@@ -8,7 +8,7 @@ import '../styles/global.css';
 import { Media, MediaContextProvider } from "../utils/media";
 
 
-import Link from 'next/link'
+import Link from 'next/link';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {
   AppBar,
@@ -21,7 +21,6 @@ import {
   ListItemText,
  } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import clsx from 'clsx';
 import { fade } from '@material-ui/core/styles'
 
 import List from '@material-ui/core/List';
@@ -30,18 +29,13 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert'; 
-import DashboardIcon from '@material-ui/icons/Dashboard';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PersonIcon from '@material-ui/icons/Person';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import MessageIcon from '@material-ui/icons/Message';
 import useTranslation from '../hooks/useTranslation';
-import LocalMallIcon from '@material-ui/icons/LocalMall';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
 import ThemeContext from '../components/Theme';
 import { useRouter } from 'next/router';
@@ -50,13 +44,13 @@ import TranslateIcon from '@material-ui/icons/Translate';
 import Tooltip from '@material-ui/core/Tooltip';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Divider from '@material-ui/core/Divider';
-import SmartphoneIcon from '@material-ui/icons/Smartphone';
-import SendIcon from '@material-ui/icons/Send';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import AssignmentIcon from '@material-ui/icons/Assignment';
-import ThreeDRotationIcon from '@material-ui/icons/ThreeDRotation';
-
-
+import StoreIcon from '@material-ui/icons/Store';
+import WorkIcon from '@material-ui/icons/Work'; 
+import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
+import Grid from '@material-ui/core/Grid';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import Box from "@material-ui/core/Box";
 
 
 const themeContext = {
@@ -153,6 +147,14 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     selectEmpty: {
       marginTop: theme.spacing(2),
+    },
+    drawerHeader: {
+      display: 'flex',
+      alignItems: 'center',
+      padding: theme.spacing(0, 1),
+      // necessary for content to be below app bar
+      ...theme.mixins.toolbar,
+      justifyContent: 'flex-end',
     },
 }));
 
@@ -458,7 +460,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Menu>
   );
 
-
   const [state, setState] = React.useState({
       top: false,
       left: false,
@@ -478,133 +479,65 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const list = (anchor:any) => (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+      <React.Fragment>
+      <div className={classes.drawerHeader}>
+        <Grid container direction="row" spacing={1} justify="flex-end" alignItems="center">
+            <Grid item>
+            <Box style={{width:140}}/>
+            </Grid>
+            <Grid item>
+            <IconButton onClick={toggleDrawer(anchor, false)}>
+            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
+            </Grid>
+        </Grid>
+          
+        </div>
       <div
-      className={clsx(classes.list, {
-          [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-      })}
-      //role="navigation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      // className={clsx(classes.list, {
+      //     [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      // })}
+      // role="navigation"
+      // onClick={toggleDrawer(anchor, false)}
+      // onKeyDown={toggleDrawer(anchor, false)}
       >
       <Router>
-      <List
-        subheader={
-          <ListSubheader component="div" id="nested-list-subheader">
-            DIY Sales
-          </ListSubheader>
-      }
-      >
-      <Link href="/[lang]/" as={`/${locale}/`} passHref>
+      <List>
       <ListItem button>
-          <ListItemIcon><LoyaltyIcon/>
+          <ListItemIcon><StoreIcon/>
           </ListItemIcon>
-          <ListItemText primary='DIY Sales Demo' />
+          <ListItemText primary='Merchants' />
       </ListItem>
-      </Link>
 
-      <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref>
       <ListItem button>
-          <ListItemIcon><DashboardIcon/>
+          <ListItemIcon><WorkIcon/>
           </ListItemIcon>
-          <ListItemText primary={t("dashboard")} />
+          <ListItemText primary="Cases" />
       </ListItem>
-      </Link>
 
-      <Link href="/[lang]/orders" as={`/${locale}/orders`} passHref>
       <ListItem button>
-          <ListItemIcon><LocalMallIcon/>
+          <ListItemIcon><InsertDriveFileIcon/>
           </ListItemIcon>
-          <ListItemText primary={t("your_orders")} />
+          <ListItemText primary="Reports" />
       </ListItem>
-      </Link>
-      <Link href="/[lang]/sales" as={`/${locale}/sales`} passHref>
       <ListItem button>
-          <ListItemIcon><AccountBalanceWalletIcon/>
+          <ListItemIcon><SettingsIcon/>
           </ListItemIcon>
-          <ListItemText primary='Sales' />
+          <ListItemText primary='Settings' />
       </ListItem>
-      </Link>
-      <Link href="/[lang]/invoices" as={`/${locale}/invoices`} passHref>
+      <Divider/>
+
       <ListItem button>
           <ListItemIcon><MessageIcon/>
           </ListItemIcon>
-          <ListItemText primary={t("invoices")} />
+          <ListItemText primary="Feedback" />
       </ListItem>
-      </Link>
       <Divider/>
-      <ListSubheader component="div" id="nested-list-subheader">
-      Marketing
-      </ListSubheader>
-      <Link href="/[lang]/learn_more_starter" as={`/${locale}/learn_more_starter`} passHref>
-      <ListItem button>
-          <ListItemIcon><SmartphoneIcon/>
-          </ListItemIcon>
-          <ListItemText primary='Talech Mobile' />
-      </ListItem>
-      </Link>
-      <Link href="/[lang]/three" as={`/${locale}/three`} passHref>
-      <ListItem button>
-          <ListItemIcon><ThreeDRotationIcon/>
-          </ListItemIcon>
-          <ListItemText primary='3D Model' />
-      </ListItem>
-      </Link>
-      <Link href="/[lang]/three2" as={`/${locale}/three2`} passHref>
-      <ListItem button>
-          <ListItemIcon><ThreeDRotationIcon/>
-          </ListItemIcon>
-          <ListItemText primary='Figma' />
-      </ListItem>
-      </Link>
-      <Link href="/[lang]/three3" as={`/${locale}/three3`} passHref>
-      <ListItem button>
-          <ListItemIcon><ThreeDRotationIcon/>
-          </ListItemIcon>
-          <ListItemText primary='Particles' />
-      </ListItem>
-      </Link>
-      <Link href="/[lang]/three4" as={`/${locale}/three4`} passHref>
-      <ListItem button>
-          <ListItemIcon><ThreeDRotationIcon/>
-          </ListItemIcon>
-          <ListItemText primary='Raytracing' />
-      </ListItem>
-      </Link>
-      <Link href="/[lang]/three5" as={`/${locale}/three5`} passHref>
-      <ListItem button>
-          <ListItemIcon><ThreeDRotationIcon/>
-          </ListItemIcon>
-          <ListItemText primary='Frosted Glass' />
-      </ListItem>
-      </Link>
-      <Divider/>
-      <ListSubheader component="div" id="nested-list-subheader">
-      {t("quick_actions")}
-      </ListSubheader>
-      <Link href="/[lang]/take_a_payment" as={`/${locale}/take_a_payment`} passHref>
-      <ListItem button>
-          <ListItemIcon><AttachMoneyIcon/>
-          </ListItemIcon>
-          <ListItemText primary={t("take_a_payment")} />
-      </ListItem>
-      </Link>
-      <Link href="/[lang]/send_an_invoice" as={`/${locale}/send_an_invoice`} passHref>
-      <ListItem button>
-          <ListItemIcon><SendIcon/>
-          </ListItemIcon>
-          <ListItemText primary={t("send_an_invoice")} />
-      </ListItem>
-      </Link>
-      <Link href="/[lang]/finish_registration" as={`/${locale}/finish_registration`} passHref>
-      <ListItem button>
-          <ListItemIcon><AssignmentIcon/>
-          </ListItemIcon>
-          <ListItemText primary= {t("finish_signing_up")} />
-      </ListItem>
-      </Link>
+      
       </List>
       </Router>
       </div>
+      </React.Fragment>
   );
 
 {/*End of Top */}
@@ -627,8 +560,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </IconButton>   
                 <Drawer 
                     anchor={'left'} 
+                    variant="persistent"
                     open={state['left']} 
                     onClose={toggleDrawer('left', false)}>{list('left')}
+                    
                 </Drawer>
                 </React.Fragment>
                 <Link href="/[lang]/" as={`/${locale}/`} passHref >

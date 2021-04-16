@@ -12,7 +12,6 @@ import ComboBox from '../../components/ComboBox';
 import SearchList from "../../components/SearchList";
 import Box from "@material-ui/core/Box";
 
-
 // const useStyles = makeStyles((theme: Theme) =>
 //   createStyles({
 //     root: {
@@ -36,7 +35,7 @@ function DIY() {
     return <React.Fragment>
       <Head>
         <title>
-        DIY Sales Demo
+        Vantage Point Boost
         </title>
       </Head>
       <MediaContextProvider>
