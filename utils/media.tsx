@@ -6,7 +6,6 @@ const ExampleAppMedia = createMedia({
     mo: 375,  //mobile
     md: 768,  //medium
     lg: 1024, //large
-    xl: 1192, //extra large
     el: 1398, //even larger
   },
 })

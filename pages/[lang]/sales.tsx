@@ -82,22 +82,6 @@ function Sales() {
           <br/>
           <CustomizedTabs/>
         </Media>
-
-        {/*High Resolution Desktop */}
-        <Media at='xl'>
-        <br/>
-        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        
-        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
-            <Button>{t('home')}</Button>
-            </Link>
-            <Typography color="textPrimary">
-            Sales
-            </Typography>
-          </Breadcrumbs>
-          <br/>
-          <CustomizedTabs/>
-        </Media>
         
         {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>

@@ -8,7 +8,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+
 import Card from '@material-ui/core/Card';
 
 
@@ -59,9 +60,9 @@ export default function SearchList() {
             </React.Fragment>
           }
         />
-        <ListItemSecondaryAction>
+        <ListItemIcon>
                 <ChevronRightIcon />
-            </ListItemSecondaryAction>
+            </ListItemIcon>
       </ListItem>
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start" button>
@@ -94,9 +95,9 @@ export default function SearchList() {
             </React.Fragment>
           }
         />
-                <ListItemSecondaryAction>
+                <ListItemIcon>
                 <ChevronRightIcon />
-            </ListItemSecondaryAction>
+            </ListItemIcon>
       </ListItem>
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start" button>
@@ -129,9 +130,9 @@ export default function SearchList() {
             </React.Fragment>
           }
         />
-                <ListItemSecondaryAction>
+                <ListItemIcon>
                 <ChevronRightIcon />
-            </ListItemSecondaryAction>
+            </ListItemIcon>
       </ListItem>
     </List>
     </Card>

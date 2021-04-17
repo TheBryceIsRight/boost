@@ -83,20 +83,6 @@ function Orders() {
         <OrderGrid/>
           <br/>
         </Media>
-
-        {/*High Resolution Desktop */}
-        <Media at='xl'>
-        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
-            <Button>{t('home')}</Button>
-            </Link>
-            <Typography color="textPrimary">
-                Your Orders
-            </Typography>
-          </Breadcrumbs>
-        <br/>
-          <OrderGrid/>
-        </Media>
         
         {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>

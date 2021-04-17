@@ -1,4 +1,3 @@
-import CustomTable from '../components/customTable';
 import { Typography } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
@@ -7,8 +6,11 @@ import HomeIcon from '@material-ui/icons/Home';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Head from 'next/head'
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import { createMuiTheme, makeStyles, ThemeProvider, withStyles, responsiveFontSizes } from '@material-ui/core/styles'
-import { useFetchUser } from '../lib/user'
+import { makeStyles } from '@material-ui/core/styles'
+import { useFetchUser } from '../lib/user';
+import React from 'react';
+import Image from "next/image";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -25,17 +27,15 @@ const useStyles = makeStyles((theme) => ({
 
 function ProfileCard({ user }) {
     return (
-      <>  
-        <div>
-          <h2>Name: {user.name}</h2>  
-          <img src={user.picture} alt="user picture" />
-          <h2>Nickname: {user.nickname}</h2>
-        </div>
-      </>
+      <React.Fragment>  
+          <Typography variant="h3">Name: {user.name}</Typography>  
+          <Image src={user.picture} alt="User" />
+          <Typography variant="h3">Nickname: {user.nickname}</Typography>
+      </React.Fragment>
     )
-  };
+  }
 
-function Profile(props) {
+function Profile() {
     const { user, loading } = useFetchUser({ required: true });
 
     const classes = useStyles();

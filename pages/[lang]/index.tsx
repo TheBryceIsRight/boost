@@ -60,13 +60,6 @@ function DIY() {
         <br/>
         <SearchList/>
         </Media>
-
-        {/*High Resolution Desktop */}
-        <Media at='xl'>
-        <ComboBox/>
-        <br/>
-        <SearchList/>
-        </Media>
         
         {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>

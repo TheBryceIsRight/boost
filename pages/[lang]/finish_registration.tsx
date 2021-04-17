@@ -96,29 +96,6 @@ function Finish_registration() {
         </Grid>
           
         </Media>
-
-        {/*High Resolution Desktop */}
-        <Media at='xl'>
-        <br/>
-        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
-            <Button>{t('home')}</Button>
-            </Link>
-            <Typography color="textPrimary">
-            {t("finish_signing_up")}
-            </Typography>
-          </Breadcrumbs>
-        <br/>
-        <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
-            <Grid item>
-            <Typography variant='h3'>{t("finish_signing_up")}</Typography>
-            </Grid>
-            <Grid item>
-            <VerticalLinearStepper/>
-            </Grid>
-        </Grid>
-        </Media>
-        
         {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>
         <br/>

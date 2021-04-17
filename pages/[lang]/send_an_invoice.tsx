@@ -97,28 +97,6 @@ function Send_an_invoice() {
           
         </Media>
 
-        {/*High Resolution Desktop */}
-        <Media at='xl'>
-        <br/>
-        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}>
-        <Link href="/[lang]/portal" as={`/${locale}/portal`} passHref >
-            <Button>{t('home')}</Button>
-            </Link>
-            <Typography color="textPrimary">
-            {t('send_an_invoice')}
-            </Typography>
-          </Breadcrumbs>
-        <br/>
-        <Grid container spacing={4} direction='column'  alignItems='center' justify='center' className={classes.root} >
-            <Grid item>
-            <Typography variant='h3'>{t('send_an_invoice')}</Typography>
-            </Grid>
-            <Grid item>
-            <VerticalLinearStepperInvoice/>
-            </Grid>
-        </Grid>
-        </Media>
-        
         {/*4K & Greater*/}
         <Media greaterThanOrEqual='el'>
         <br/>
