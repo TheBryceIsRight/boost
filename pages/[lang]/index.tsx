@@ -42,23 +42,101 @@ function DIY() {
         
         {/*Mobile */}
         <Media lessThan='md'>
-        <ComboBox/>
-        <br/>
-        <SearchList/>
+        <Grid container spacing={3} direction="column">
+        <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+        <Grid item>
+            <Typography variant="h3">Search for a merchant</Typography>
+          </Grid>
+          <Grid item>
+          <ComboBox/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h4">Recent searches</Typography>
+          </Grid>
+          <Grid item>
+          <SearchList/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h4">Saved searches</Typography>
+          </Grid>
+          <Grid item>
+          <SearchList/>
+          </Grid>
+        </Grid>
         </Media>
 
         {/*Tablet */}
         <Media at='md'>
-        <ComboBox/>
-        <br/>
-        <SearchList/>
+        <Grid container spacing={3} direction="column">
+        <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+        <Grid item>
+            <Typography variant="h3">Search for a merchant</Typography>
+          </Grid>
+          <Grid item>
+          <ComboBox/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h4">Recent searches</Typography>
+          </Grid>
+          <Grid item>
+          <SearchList/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h4">Saved searches</Typography>
+          </Grid>
+          <Grid item>
+          <SearchList/>
+          </Grid>
+        </Grid>
         </Media>
 
         {/*Desktop */}
         <Media at='lg'>
-        <ComboBox/>
-        <br/>
-        <SearchList/>
+        <Grid container spacing={3} direction="column">
+        <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+        <Grid item>
+            <Typography variant="h3">Search for a merchant</Typography>
+          </Grid>
+          <Grid item>
+          <ComboBox/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h4">Recent searches</Typography>
+          </Grid>
+          <Grid item>
+          <SearchList/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h4">Saved searches</Typography>
+          </Grid>
+          <Grid item>
+          <SearchList/>
+          </Grid>
+        </Grid>
         </Media>
         
         {/*4K & Greater*/}
