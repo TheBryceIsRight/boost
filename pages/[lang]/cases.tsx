@@ -12,6 +12,7 @@ import ComboBox from '../../components/ComboBox';
 import SearchList from "../../components/SearchList";
 import Box from "@material-ui/core/Box";
 import Pie from "../../components/PieChart";
+import CollapsibleTable from "../../components/CollapsibleTable";
 
 // const useStyles = makeStyles((theme: Theme) =>
 //   createStyles({
@@ -71,6 +72,15 @@ function DIY() {
           <Grid item>
           <SearchList/>
           </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h3">Cases</Typography>
+          </Grid>
+          <Grid item>
+          <CollapsibleTable/>
+          </Grid>
           
         </Grid>
         </Media>
@@ -104,6 +114,15 @@ function DIY() {
           </Grid>
           <Grid item>
           <SearchList/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h3">Cases</Typography>
+          </Grid>
+          <Grid item>
+          <CollapsibleTable/>
           </Grid>
           
         </Grid>
@@ -139,6 +158,15 @@ function DIY() {
           <Grid item>
           <SearchList/>
           </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h3">Cases</Typography>
+          </Grid>
+          <Grid item>
+          <CollapsibleTable/>
+          </Grid>
           
         </Grid>
         </Media>
@@ -172,6 +200,15 @@ function DIY() {
           </Grid>
           <Grid item>
           <SearchList/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h3">Cases</Typography>
+          </Grid>
+          <Grid item>
+          <CollapsibleTable/>
           </Grid>
           
         </Grid>

@@ -91,21 +91,6 @@ class Chart extends React.Component {
                         }
                     ]}
                 />
-                <style jsx>{
-                    `
-                   .chart {
-                        height:50vh;
-                        width:60vw;
-                        background: white;
-                        transition: 0.3s;
-                    }
-                    
-                    .chart:hover {
-                         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-                    }
-                    `
-                }
-                </style>
             </div>
         )
     }

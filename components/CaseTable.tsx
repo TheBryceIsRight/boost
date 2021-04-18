@@ -113,11 +113,25 @@ interface HeadCell {
 }
 
 const headCells: HeadCell[] = [
-  { id: 'date', numeric: false, disablePadding: true, label: 'Transaction Date (EST)' },
-  { id: 'customer_name', numeric: true, disablePadding: false, label: 'Customer Name' },
-  { id: 'payment', numeric: true, disablePadding: false, label: 'Payment' },
-  { id: 'order_no', numeric: true, disablePadding: false, label: 'Invoice Number' },
-  { id: 'status', numeric: true, disablePadding: false, label: 'Status' },
+  { id: 'date', numeric: false, disablePadding: true, label: 'Client GRP' },
+  { id: 'customer_name', numeric: true, disablePadding: false, label: 'Tax ID' },
+  { id: 'payment', numeric: true, disablePadding: false, label: 'Chain Number' },
+  { id: 'order_no', numeric: true, disablePadding: false, label: 'Chain Name' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'Parent Chain Number' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'Parent Chain Name' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'MID' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'DBA' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'Merchant Name' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'Address' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'City' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'State' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'Postal Code' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'SIC' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'Channel' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'Depositing Bank' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'LDD' },
+  { id: 'status', numeric: true, disablePadding: false, label: 'Pricing Method' },
+
 ];
 
 interface EnhancedTableProps {
