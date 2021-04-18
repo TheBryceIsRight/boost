@@ -79,7 +79,8 @@ class BarChart extends React.Component {
   render() {
     const { data, keys, index, groupMode, tickValues, colorBy, customTooltip, layout } = this.props;
     
-    const theme = this.context ? theme2 : theme1;
+    let theme = theme2;
+    theme = this.context ? theme2 : theme1;
 
 
     return (
@@ -101,7 +102,7 @@ class BarChart extends React.Component {
           padding={0.5}
           colors={{scheme: "category10"}}
           colorBy={colorBy}
-          borderColor={lightTheme.palette.primary.main}
+          borderColor={theme.legends.text.fill}
           axisBottom={{
             orient: "bottom",
             tickSize: 5,
@@ -124,7 +125,7 @@ class BarChart extends React.Component {
           gridYValues={tickValues}
           labelSkipWidth={12}
           labelSkipHeight={12}
-          labelTextColor={lightTheme.palette.primary.main}
+          labelTextColor={theme.legends.text.fill}
           enableLabel={false}
           animate={true}
           motionStiffness={90}

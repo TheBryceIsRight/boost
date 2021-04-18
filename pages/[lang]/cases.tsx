@@ -15,7 +15,9 @@ import Pie from "../../components/PieChart";
 import CollapsibleTable from "../../components/CollapsibleTable";
 import { ThemeProvider } from '@material-ui/core/styles';
 import themeContext from '../../components/Theme';
-
+import WeeklySales from "../../components/WeeklySales";
+import WeeklySales2 from "../../components/WeeklySales2";
+import WeeklySales3 from "../../components/WeeklySales3";
 
 
 function DIY() {
@@ -33,8 +35,8 @@ function DIY() {
 
         
         {/*Mobile */}
-        <Media lessThan='md'>
-        <Grid container spacing={3} direction="column">
+        <Media at='sm'>
+        <Grid container spacing={3} direction="column" justify="center">
         <Grid item>
             <Box style={{height:boxHeight}}></Box>
           </Grid>
@@ -45,6 +47,67 @@ function DIY() {
               <Pie/>
           </Grid>
         <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h3">Costs over time</Typography>
+          </Grid>
+          <Grid item>
+              <WeeklySales3/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+        <Grid item>
+            <Typography variant="h3">Search cases</Typography>
+          </Grid>
+          <Grid item>
+          <ComboBox/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h4">Recent searches</Typography>
+          </Grid>
+          <Grid item>
+          <SearchList/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h3">Cases</Typography>
+          </Grid>
+          <Grid item>
+          <CollapsibleTable/>
+          </Grid>
+          
+        </Grid>
+        </Media>
+
+        {/*Mobile */}
+        <Media at='mo'>
+        <Grid container spacing={3} direction="column" justify="center">
+        <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h3">Case summary</Typography>
+          </Grid>
+          <Grid item>
+              <Pie/>
+          </Grid>
+        <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h3">Costs over time</Typography>
+          </Grid>
+          <Grid item>
+              <WeeklySales3/>
+          </Grid>
+          <Grid item>
             <Box style={{height:boxHeight}}></Box>
           </Grid>
         <Grid item>
@@ -77,7 +140,7 @@ function DIY() {
 
         {/*Tablet */}
         <Media at='md'>
-        <Grid container spacing={3} direction="column">
+        <Grid container spacing={3} direction="column" justify="center">
         <Grid item>
             <Box style={{height:boxHeight}}></Box>
           </Grid>
@@ -88,6 +151,15 @@ function DIY() {
               <Pie/>
           </Grid>
         <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h3">Costs over time</Typography>
+          </Grid>
+          <Grid item>
+              <WeeklySales2/>
+          </Grid>
+          <Grid item>
             <Box style={{height:boxHeight}}></Box>
           </Grid>
         <Grid item>
@@ -133,6 +205,15 @@ function DIY() {
           <Grid item>
             <Box style={{height:boxHeight}}></Box>
           </Grid>
+          <Grid item>
+            <Typography variant="h3">Costs over time</Typography>
+          </Grid>
+          <Grid item>
+              <WeeklySales/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
         <Grid item>
             <Typography variant="h3">Search Cases</Typography>
           </Grid>
@@ -172,6 +253,15 @@ function DIY() {
           </Grid>
           <Grid item>
               <Pie/>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+            <Typography variant="h3">Costs over time</Typography>
+          </Grid>
+          <Grid item>
+              <WeeklySales/>
           </Grid>
           <Grid item>
             <Box style={{height:boxHeight}}></Box>
