@@ -38,7 +38,7 @@ function createData(
     city,
     state,
     history: [
-      { depositing_bank: '2020-01-05', client_grp_num: '11091700', mid: 1234567891234 , address: "123 Peachtree St NE", postal: "12345", ldd: "01/01/2022"},
+      { depositing_bank: 'U.S. Bank', client_grp_num: '11091700', mid: 1234567891234 , address: "123 Peachtree St NE", postal: "12345", ldd: "01/01/2022"},
     ],
   };
 }
@@ -72,6 +72,7 @@ function Row(props: { row: ReturnType<typeof createData> }) {
               <Typography variant="h6" gutterBottom component="div">
                 More Information
               </Typography>
+              <Box margin={1}></Box>
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
