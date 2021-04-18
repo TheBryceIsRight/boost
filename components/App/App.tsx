@@ -1,55 +1,157 @@
 import React from 'react';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Grid from '@material-ui/core/Grid';
-
+import { Media, MediaContextProvider } from "../../utils/media";
+// import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import Box from "@material-ui/core/Box";
 
 const App: React.FC = () => {
-    return (
-      <React.Fragment>
-      <Grid container spacing={5} direction='column' alignItems='center' justify='center' >
-        <Grid item>
-        <Skeleton variant="rect" width={700} height={400} />
+
+  const boxHeight = 30;
+  const headerHeight= 40;
+  const headerWidth = 400;
+  const listHeight = 280;
+  const listWidth = 600;
+  const searchInputHeight = 30;
+  const searchInputWidth = 800;
+
+
+    return (<React.Fragment>
+      <MediaContextProvider>
+        
+        {/*Mobile */}
+        <Media lessThan='md'>
+        <Grid container spacing={3} direction="column">
+          <Grid item>
+              <Box style={{height:boxHeight}}></Box>
+            </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect"  style={{height:searchInputHeight, width:searchInputWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:listHeight, width:listWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:listHeight, width:listWidth}}></Skeleton>
+          </Grid>
         </Grid>
-      </Grid>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' >
-        <Grid item>
-        <Skeleton variant="rect" width={180} height={200} />
+        </Media>
+
+        {/*Tablet */}
+        <Media at='md'>
+        <Grid container spacing={3} direction="column">
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect"  style={{height:searchInputHeight, width:searchInputWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:listHeight, width:listWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:listHeight, width:listWidth}}></Skeleton>
+          </Grid>
         </Grid>
-        <Grid item>
-        <Skeleton variant="rect" width={180} height={200} />
+        </Media>
+
+        {/*Desktop */}
+        <Media at='lg'>
+        <Grid container spacing={3} direction="column">
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect"  style={{height:searchInputHeight, width:searchInputWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:listHeight, width:listWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:listHeight, width:listWidth}}></Skeleton>
+          </Grid>
         </Grid>
-        <Grid item>
-        <Skeleton variant="rect" width={180} height={200} />
+        </Media>
+        
+        {/*4K & Greater*/}
+        <Media greaterThanOrEqual='el'>
+        <Grid container spacing={3} direction="column">
+          <Grid item>
+              <Box style={{height:boxHeight}}></Box>
+            </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect"  style={{height:searchInputHeight, width:searchInputWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:listHeight, width:listWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+            <Box style={{height:boxHeight}}></Box>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:headerHeight, width:headerWidth}}></Skeleton>
+          </Grid>
+          <Grid item>
+          <Skeleton variant="rect" style={{height:listHeight, width:listWidth}}></Skeleton>
+          </Grid>
         </Grid>
-        <Grid item>
-        <Skeleton variant="rect" width={180} height={200} />
-        </Grid>
-        <Grid item>
-        <Skeleton variant="rect" width={180} height={200} />
-        </Grid>
-      </Grid>
-      <br/>
-      <br/>
-      <Grid container spacing={5} direction='row' alignItems='flex-start' justify='flex-start' >
-        <Grid item>
-        <Skeleton variant="rect" width={300} height={600} />
-        </Grid>
-        <Grid item>
-        <Skeleton variant="rect" width={300} height={600} />
-        </Grid>
-        <Grid item>
-        <Skeleton variant="rect" width={300} height={600} />
-        </Grid>
-      </Grid>
-      </React.Fragment>
-      
-    );
-  }
-  
-  export default App;
+        </Media>
+        </MediaContextProvider>
+    </React.Fragment> )
+}
+
+export default App;
