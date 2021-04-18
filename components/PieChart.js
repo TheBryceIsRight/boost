@@ -7,6 +7,77 @@ import React from "react";
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
+
+import { darkTheme } from '../components/Theme';
+import { lightTheme } from '../components/Theme';
+import { ThemeProvider } from '@material-ui/core/styles';
+import ThemeContext from '../components/Theme';
+
+// Nivo theming
+const theme1 = {
+    axis: {
+      ticks: {
+        line: {
+          stroke: darkTheme.palette.primary.main,
+          strokeWidth: 0
+        },
+        text: {
+          fill: darkTheme.palette.primary.main,
+          fontFamily: "'Roboto', sans-serif",
+        }
+      }
+    },
+    grid: {
+      line: {
+        stroke: darkTheme.palette.primary.main,
+        strokeWidth: 0.5
+      }
+    },
+    legends: {
+      text: {
+        fontFamily: "'Roboto', sans-serif",
+        fill: darkTheme.palette.primary.main,
+      }
+    },
+    tooltip: {
+      container: {
+          background: darkTheme.palette.background.default,
+      },
+  },
+  };
+  
+  const theme2 = {
+    axis: {
+      ticks: {
+        line: {
+          stroke: lightTheme.palette.primary.main,
+          strokeWidth: 0
+        },
+        text: {
+          fill: lightTheme.palette.primary.main,
+          fontFamily: "'Roboto', sans-serif",
+        }
+      }
+    },
+    grid: {
+      line: {
+        stroke: lightTheme.palette.primary.main,
+        strokeWidth: 0.5
+      }
+    },
+    legends: {
+      text: {
+        fontFamily: "'Roboto', sans-serif",
+        fill: lightTheme.palette.primary.main,
+      }
+    },
+    tooltip: {
+      container: {
+          background: lightTheme.palette.background.default,
+      },
+  },
+  };
+
 const data = 
     [{
       "id": "Created",
@@ -48,21 +119,29 @@ const data =
 
 class Chart extends React.Component {
 
+    static contextType = ThemeContext
+
     render() {
+        let theme = theme2;
+        theme = this.context ? theme2 : theme1;
+
         return (
             <div className="chart" style={{height:400, minWidth:"100%", borderRadius:4}}>
+                <React.Fragment>
+                <ThemeProvider theme={theme}>
                 <ResponsivePie
                     data={data}
                     margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
                     innerRadius={0.5}
                     padAngle={0.7}
                     cornerRadius={3}
+                    theme={theme}
                     colors={{ scheme: 'pastel2' }}
                     borderWidth={1}
-                    borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
+                    borderColor={theme.grid.line.stroke}
                     radialLabelsSkipAngle={10}
-                    radialLabelsTextColor="#333333"
-                    radialLabelsLinkColor={{ from: 'color' }}
+                    radialLabelsTextColor={theme.legends.text.fill}
+                    radialLabelsLinkColor={theme.legends.text.fill}
                     sliceLabelsSkipAngle={10}
                     sliceLabelsTextColor="#333333"
                     legends={[
@@ -91,6 +170,8 @@ class Chart extends React.Component {
                         }
                     ]}
                 />
+                </ThemeProvider>
+                </React.Fragment>
             </div>
         )
     }

@@ -13,21 +13,9 @@ import SearchList from "../../components/SearchList";
 import Box from "@material-ui/core/Box";
 import Pie from "../../components/PieChart";
 import CollapsibleTable from "../../components/CollapsibleTable";
+import { ThemeProvider } from '@material-ui/core/styles';
+import themeContext from '../../components/Theme';
 
-// const useStyles = makeStyles((theme: Theme) =>
-//   createStyles({
-//     root: {
-//       flexGrow: 1,
-//     },
-//     paper: {
-//       height: 100,
-//       width: 100,
-//     },
-//     control: {
-//       padding: theme.spacing(2),
-//     },
-//   }),
-// );
 
 
 function DIY() {
@@ -41,6 +29,8 @@ function DIY() {
         </title>
       </Head>
       <MediaContextProvider>
+      <ThemeProvider theme={themeContext}>
+
         
         {/*Mobile */}
         <Media lessThan='md'>
@@ -213,6 +203,7 @@ function DIY() {
           
         </Grid>
         </Media>
+        </ThemeProvider>
         </MediaContextProvider>
     </React.Fragment> 
 }
