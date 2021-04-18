@@ -138,7 +138,6 @@ class Chart extends React.Component {
                     theme={theme}
                     colors={{ scheme: 'pastel2' }}
                     borderWidth={1}
-                    borderColor={theme.grid.line.stroke}
                     radialLabelsSkipAngle={10}
                     radialLabelsTextColor={theme.legends.text.fill}
                     radialLabelsLinkColor={theme.legends.text.fill}
