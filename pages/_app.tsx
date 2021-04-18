@@ -508,12 +508,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           </ListItemIcon>
           <ListItemText primary='Merchants' />
       </ListItem>
-
+      <Link href="/[lang]/cases" as={`/${locale}/cases`} passHref >
       <ListItem button>
           <ListItemIcon><WorkIcon/>
           </ListItemIcon>
           <ListItemText primary="Cases" />
       </ListItem>
+      </Link>
 
       <ListItem button>
           <ListItemIcon><InsertDriveFileIcon/>
