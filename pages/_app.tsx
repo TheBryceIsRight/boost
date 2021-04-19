@@ -503,11 +503,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       >
       <Router>
       <List>
+      <Link href="/[lang]/" as={`/${locale}/`} passHref >
+
       <ListItem button>
           <ListItemIcon><StoreIcon/>
           </ListItemIcon>
           <ListItemText primary='Merchants' />
       </ListItem>
+      </Link>
       <Link href="/[lang]/cases" as={`/${locale}/cases`} passHref >
       <ListItem button>
           <ListItemIcon><WorkIcon/>
