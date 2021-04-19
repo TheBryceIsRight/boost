@@ -329,7 +329,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </ListItemIcon>
             <ListItemText>
                   <Typography>
-                  {t("login")}
+                  {t("logout")}
                   </Typography>
             </ListItemText>
           </ListItem>
