@@ -15,9 +15,7 @@ import Pie from "../../components/PieChart";
 import CollapsibleTable from "../../components/CollapsibleTable";
 import { ThemeProvider } from '@material-ui/core/styles';
 import themeContext from '../../components/Theme';
-import WeeklySales from "../../components/WeeklySales";
-import WeeklySales2 from "../../components/WeeklySales2";
-import WeeklySales3 from "../../components/WeeklySales3";
+import Bar from "../../components/Bar";
 
 
 function DIY() {
@@ -36,7 +34,7 @@ function DIY() {
         
         {/*Mobile */}
         <Media at='sm'>
-        <Grid container spacing={3} direction="column" justify="center">
+        <Grid container spacing={3} direction="column" justify="center" alignItems="center">
         <Grid item>
             <Box style={{height:boxHeight}}></Box>
           </Grid>
@@ -53,7 +51,7 @@ function DIY() {
             <Typography variant="h3">Costs over time</Typography>
           </Grid>
           <Grid item>
-              <WeeklySales3/>
+              <Bar/>
           </Grid>
           <Grid item>
             <Box style={{height:boxHeight}}></Box>
@@ -105,7 +103,7 @@ function DIY() {
             <Typography variant="h3">Costs over time</Typography>
           </Grid>
           <Grid item>
-              <WeeklySales3/>
+              <Bar/>
           </Grid>
           <Grid item>
             <Box style={{height:boxHeight}}></Box>
@@ -157,7 +155,7 @@ function DIY() {
             <Typography variant="h3">Costs over time</Typography>
           </Grid>
           <Grid item>
-              <WeeklySales2/>
+              <Bar/>
           </Grid>
           <Grid item>
             <Box style={{height:boxHeight}}></Box>
@@ -209,7 +207,7 @@ function DIY() {
             <Typography variant="h3">Costs over time</Typography>
           </Grid>
           <Grid item>
-              <WeeklySales/>
+              <Bar/>
           </Grid>
           <Grid item>
             <Box style={{height:boxHeight}}></Box>
@@ -261,7 +259,7 @@ function DIY() {
             <Typography variant="h3">Costs over time</Typography>
           </Grid>
           <Grid item>
-              <WeeklySales/>
+              <Bar/>
           </Grid>
           <Grid item>
             <Box style={{height:boxHeight}}></Box>
