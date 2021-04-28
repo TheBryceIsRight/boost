@@ -276,7 +276,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       return (
       <Link href="/[lang]/" as={`/${locale}/`} passHref>
         <ButtonBase>
-        <img src='/logo_dark.svg' alt='Logo' height="36"/>
+        <img src='/logo_dark.svg' alt='Logo' height={36} width={94} />
         </ButtonBase>
       </Link>
       );
@@ -284,7 +284,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
       <Link href="/[lang]/" as={`/${locale}/`} passHref>
         <ButtonBase>
-        <img src='/logo.svg' alt='Logo' height="36"/>
+        <img src='/logo.svg' alt='Logo' height={36} width={94}/>
         </ButtonBase>
       </Link>
       );
